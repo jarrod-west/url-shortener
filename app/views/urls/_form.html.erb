@@ -1,0 +1,11 @@
+<h3>New URL</h3>
+<%= form_with model: @url, url: "/urls", method: "post" do |form| %>
+  <div>
+    <%= form.label :original, "URL:" %>
+    <%= form.text_field :original %>
+  </div>
+  <div>
+    <%= form.submit "Create" %>
+  </div>
+<% end %>
+

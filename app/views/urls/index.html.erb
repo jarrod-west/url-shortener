@@ -1,0 +1,6 @@
+<h3>All URLs</h3>
+<ul>
+  <% @urls.each do |url| %>
+    <li><%= url.original %> => <%= url.short %></li>
+  <% end %>
+</ul>
