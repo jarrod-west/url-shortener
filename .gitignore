@@ -36,3 +36,6 @@
 
 # Ignore third party libraries
 /vendor
+
+# Ignore vscode
+.vscode

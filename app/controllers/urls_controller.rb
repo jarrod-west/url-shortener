@@ -9,6 +9,10 @@ class UrlsController < ApplicationController
 
   def show
     @url = Url.find(params[:id])
+    if !params["created"]
+      redirect_to @url.original, allow_other_host: true
+    end
+    @url
   end
 
   def create
@@ -19,7 +23,8 @@ class UrlsController < ApplicationController
     # Create and save the new URL
     @url = Url.new(params)
     if @url.save
-      redirect_to @url
+      # Redirect to the created object, but pass a query param so we can choose not to redirect
+      redirect_to action: "show", controller: "urls", id: @url.id, created: true
     else
       render :new, status: :unprocessable_entity
     end
