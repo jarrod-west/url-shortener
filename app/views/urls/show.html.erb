@@ -1,3 +1,14 @@
-<h3>Mapped "<%= @url.original %>" to "<%= url_for [@url, short: @url.short, only_path: false] %>"</h3>
-
 <%= render "form", object: Url.new %>
+
+<div class="main-item">
+  <div class="post-create">
+    <h4>Here's your shortened URL!</h4>
+    <div class="post-create-grid">
+      <p>Before:</p>
+      <p><a href="<%= @url.original %>"><%= @url.original %></a></p>
+      <p>After:</p>
+      <p><a id="shortened-link" href="<%= full_shortened(@url) %>"><%= full_shortened(@url) %></a></p>
+    </div>
+    <button class="clipboard-btn" data-clipboard-target="#shortened-link">Copy</button>
+  </div>
+</div>

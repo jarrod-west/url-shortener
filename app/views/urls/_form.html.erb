@@ -1,11 +1,11 @@
-<h3>New URL</h3>
-<%= form_with model: @url, url: "/urls", method: "post" do |form| %>
-  <div>
-    <%= form.label :original, "URL:" %>
-    <%= form.text_field :original %>
+<div class="main-item">
+  <div class="create-form">
+    <%= form_with model: @url, url: "/urls", method: "post" do |form| %>
+      <div class="create-form-input">
+        <%= form.text_field :original, placeholder: "Enter the URL here" %>
+        <%= form.submit "Shorten" %>
+      </div>
+    <% end %>
+    <p>Enter the URL you want to shorten into the text box above, then hit Shorten!
   </div>
-  <div>
-    <%= form.submit "Create" %>
-  </div>
-<% end %>
-
+</div>

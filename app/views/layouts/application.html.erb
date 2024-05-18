@@ -7,10 +7,19 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <h2>URL Shortener</h2>
-    <%= yield %>
+    <div class="header">
+      <p>URL Shortener</p>
+    </div>
+    <div class="main">
+      <%= yield %>
+    </div>
+    <div class="footer">
+      <p>Created by Jarrod West</p>
+      <a href="https://github.com/jarrod-west/url-shortener">Check it out on Github</a>
+    </div>
   </body>
 </html>
