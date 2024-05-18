@@ -9,6 +9,6 @@
       <p>After:</p>
       <p><a id="shortened-link" href="<%= full_shortened(@url) %>"><%= full_shortened(@url) %></a></p>
     </div>
-    <button class="clipboard-btn" data-clipboard-target="#shortened-link">Copy</button>
+    <input type="button" class="copy-button" data-clipboard-target="#shortened-link" onclick="copyClicked(this);" value="Copy"/>
   </div>
 </div>
