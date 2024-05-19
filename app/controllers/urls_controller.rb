@@ -7,14 +7,14 @@ class UrlsController < ApplicationController
     @urls = Url.all
   end
 
-  def new
-    @url = Url.new
-  end
-
   def show
     @url = Url.find_by(short: params[:short])
     redirect_to @url.original, allow_other_host: true unless params['created']
     @url
+  end
+
+  def new
+    @url = Url.new
   end
 
   def create
