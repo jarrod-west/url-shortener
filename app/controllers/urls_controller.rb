@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UrlsController < ApplicationController
   SHORT_SIZE = 8 # Result will be ~4/3 this size, see SecureRandom.urlsafe_base64 doco for details.
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Url < ApplicationRecord
   attribute :original, :string
   attribute :short, :string
