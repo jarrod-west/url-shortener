@@ -1,6 +1,19 @@
-<h3>All URLs</h3>
-<ul>
-  <% @urls.each do |url| %>
-    <li><%= url.original %> => <%= url.short %></li>
-  <% end %>
-</ul>
+<div class="main-item">
+  <div class="list">
+    <h4>Saved URLs</h4>
+    <div class="list-table">
+      <table>
+        <tr>
+          <th>Original</th>
+          <th>Shortened</th>
+        </tr>
+        <% @urls.each do |url| %>
+          <tr>
+            <td><a href="<%= url.original %>"><%= url.original %></a></td>
+            <td><a href="<%= full_shortened(url) %>"><%= full_shortened(url) %></a></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

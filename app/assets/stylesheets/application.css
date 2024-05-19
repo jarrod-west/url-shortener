@@ -136,6 +136,29 @@ input[type=submit], input[type=button] {
   font-weight: normal;
 }
 
+.list {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+tr, th, td {
+  border-bottom: 1px solid black;
+  padding: 0px 5px 0px;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.list-table a {
+  color: var(--dark-style-colour);
+  font-weight: normal;
+  font-size: 10px;
+}
+
 .footer a {
   color: var(--light-style-colour);
 }
