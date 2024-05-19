@@ -1,8 +1,8 @@
 <div class="main-item">
   <div class="create-form">
-    <%= form_with model: @url, url: "/urls", method: "post" do |form| %>
+    <%= simple_form_for @url, url: "/urls", method: "post", local: true do |form| %>
       <div class="create-form-input">
-        <%= form.text_field :original, placeholder: "Enter the URL here" %>
+        <%= form.input :original, label: false, placeholder: "Enter the URL here" %>
         <%= form.submit "Shorten" %>
       </div>
     <% end %>

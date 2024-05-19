@@ -85,6 +85,16 @@ body {
   width: 500px;
 }
 
+.simple_form div.input {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.field_with_errors input {
+  display: flex;
+  flex-direction: column;
+}
+
 input[type=submit], input[type=button] {
   color: white;
   background-color: var(--dark-style-colour);

@@ -39,6 +39,9 @@ gem "jbuilder"
 gem 'clipboard-rails', '~> 1.7', '>= 1.7.1'
 gem 'jquery-rails'
 
+# Simplified form access
+gem 'simple_form'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 
