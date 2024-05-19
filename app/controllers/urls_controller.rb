@@ -28,7 +28,8 @@ class UrlsController < ApplicationController
       # Redirect to the created object, but pass a query param so we can choose not to redirect
       redirect_to action: "show", controller: "urls", short: @url.short, created: true
     else
-      render :new, status: :unprocessable_entity
+      # Render the "new" object again, showing the errors
+      render action: "new", controller: "urls", status: :unprocessable_entity
     end
   end
 
