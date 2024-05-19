@@ -3,5 +3,6 @@ class Url < ApplicationRecord
   attribute :original, :string
   attribute :short, :string
 
-  validates :original, uniqueness: true
+  validates :original, uniqueness: { message: "URL has already been shortened" }
+  validates :original, presence: { message: "URL can't be blank" }
 end

@@ -2,8 +2,9 @@
   <div class="create-form">
     <%= simple_form_for @url, url: "/urls", method: "post", local: true do |form| %>
       <div class="create-form-input">
-        <%= form.input :original, label: false, placeholder: "Enter the URL here" %>
+        <%= form.input :original, required: false, label: false, :error_html => { :id => "url_error"}, placeholder: "Enter the URL here" %>
         <%= form.submit "Shorten" %>
+        <%= form.error :name, :id => "url_error" %>
       </div>
     <% end %>
     <p>Enter the URL you want to shorten into the text box above, then hit Shorten!
