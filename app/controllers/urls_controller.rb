@@ -11,9 +11,7 @@ class UrlsController < ApplicationController
 
   def show
     @url = Url.find_by(short: params[:short])
-    if !params["created"]
-      redirect_to @url.original, allow_other_host: true
-    end
+    redirect_to @url.original, allow_other_host: true unless params['created']
     @url
   end
 
@@ -26,19 +24,20 @@ class UrlsController < ApplicationController
     @url = Url.new(params)
     if @url.save
       # Redirect to the created object, but pass a query param so we can choose not to redirect
-      redirect_to action: "show", controller: "urls", short: @url.short, created: true
+      redirect_to action: 'show', controller: 'urls', short: @url.short, created: true
     else
       # Render the "new" object again, showing the errors
-      render action: "new", controller: "urls", status: :unprocessable_entity
+      render action: 'new', controller: 'urls', status: :unprocessable_entity
     end
   end
 
   private
-    def url_parameters
-      params.require(:url).permit(:original)
-    end
 
-    def create_short
-      SecureRandom.urlsafe_base64(SHORT_SIZE)
-    end
+  def url_parameters
+    params.require(:url).permit(:original)
+  end
+
+  def create_short
+    SecureRandom.urlsafe_base64(SHORT_SIZE)
+  end
 end
