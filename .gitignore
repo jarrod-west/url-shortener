@@ -39,3 +39,6 @@
 
 # Ignore vscode
 .vscode
+
+# Ignore code coverage
+coverage
