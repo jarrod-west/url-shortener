@@ -18,7 +18,7 @@ RSpec.describe UrlHelper, type: :helper do
       Url.create(original: 'http://www.google.com', short: 'short-url')
       url = Url.find_by(short: 'short-url')
 
-      expect(helper.full_shortened(url)).to eq('http://test.host/urls/short-url')
+      expect(helper.full_shortened(url)).to eq(URI('http://test.host/short-url'))
     end
   end
 end

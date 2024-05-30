@@ -2,6 +2,6 @@
 
 module UrlHelper
   def full_shortened(url_object)
-    url_for [url_object, { only_path: false }]
+    URI.join(root_url, url_object.short)
   end
 end

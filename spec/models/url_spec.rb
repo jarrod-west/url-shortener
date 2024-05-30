@@ -7,6 +7,11 @@ RSpec.describe Url, type: :model do
     expect(Url.new(original: 'http://www.google.com', short: 'bar')).to be_valid
   end
 
+  it 'uses the short suffix as the ID' do
+    url = Url.new(original: 'http://www.google.com', short: 'bar')
+    expect(url.to_param).to eq('bar')
+  end
+
   it 'requires the original url to be present' do
     expect(Url.new(short: 'bar')).to_not be_valid
   end

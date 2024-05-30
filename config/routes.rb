@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   root 'urls#new'
 
   resources :urls, param: :short
+
+  get '/:short' => 'urls#show' # Remove the need for the /urls path segment
 end
